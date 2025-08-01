@@ -5,10 +5,10 @@
 	<nav class="nav">
 		<div class="container">
 			<div class="nav-content">
-				<div class="logo">
+				<a href="#" class="logo" onclick="scrollToTop(); return false;">
 					<h1 class="logo-text">SAAIL Lab</h1>
 					<p class="logo-subtitle">IIT Madras Zanzibar</p>
-				</div>
+				</a>
 				<div class="nav-links">
 					<a href="#about" class="nav-link">About</a>
 					<a href="#research" class="nav-link">Research</a>
@@ -57,6 +57,20 @@
 		font-weight: 700;
 		color: #1e3a8a;
 		margin: 0;
+	}
+
+	.logo {
+		text-decoration: none;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.logo:hover {
+		transform: scale(1.05);
+	}
+
+	.logo:hover .logo-text {
+		color: #059669;
 	}
 
 	.logo-subtitle {
@@ -160,5 +174,13 @@
 				header?.classList.remove('scrolled');
 			}
 		});
+
+		// Smooth scroll to top function
+		window.scrollToTop = function() {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		};
 	});
 </script>
